@@ -8,6 +8,6 @@ services:
       pip install -r requirements.txt &&
       python build_notebook.py
     startCommand: >-
-      voila app.ipynb --no-browser --Voila.ip=0.0.0.0 --port=$PORT --VoilaConfiguration.theme=light --MappingKernelManager.cull_idle_timeout=60 --MappingKernelManager.cull_interval=30
+      voila app.ipynb --no-browser --Voila.ip=0.0.0.0 --port=$PORT --VoilaConfiguration.pool_size=1 --VoilaConfiguration.preheat_kernel=False --MappingKernelManager.cull_idle_timeout=120 --MappingKernelManager.cull_interval=60
     healthCheckPath: /
     autoDeploy: true
